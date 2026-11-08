@@ -1,0 +1,19 @@
+[package]
+name = "hidock-cli"
+version = "0.1.0"
+edition = "2024"
+description = "HiDock の録音を USB から一覧・ダウンロードする読み取り専用 CLI"
+license = "MIT"
+
+[[bin]]
+name = "hidock"
+path = "src/main.rs"
+
+[dependencies]
+rusb = { version = "0.9", features = ["vendored"] }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+
+[profile.release]
+strip = true
+lto = true
